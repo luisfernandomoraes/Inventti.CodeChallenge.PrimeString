@@ -59,7 +59,7 @@ namespace Inventti.CodeChallenge.PrimeString.Domain.Models
                 _secondString.Select((value, index) => (value, index)).Where(item => item.index % 2 == 0).ToList();
 
 
-            var result = evenElementsFromFirstString.TrueForAll(valueTuple=> evenElementsFromSecondString.Exists(x => x.value == valueTuple.value));
+            var result = evenElementsFromFirstString.TrueForAll(valueTuple => evenElementsFromSecondString.Exists(x => x.value == valueTuple.value));
 
             return result;
         }
@@ -78,7 +78,7 @@ namespace Inventti.CodeChallenge.PrimeString.Domain.Models
             var oddElementsFromSecondString =
                 _secondString.Select((value, index) => (value, index)).Where(item => item.index % 2 != 0).ToList();
 
-            var result = oddElementsFromFirstString.TrueForAll(valueTuple=> oddElementsFromSecondString.Exists(x => x.value == valueTuple.value));
+            var result = oddElementsFromFirstString.TrueForAll(valueTuple => oddElementsFromSecondString.Exists(x => x.value == valueTuple.value));
 
             return result;
         }
