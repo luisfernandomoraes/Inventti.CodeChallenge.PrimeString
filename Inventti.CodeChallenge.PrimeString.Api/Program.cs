@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Inventti.CodeChallenge.PrimeString
+namespace Inventti.CodeChallenge.PrimeString.Api
 {
     public class Program
     {

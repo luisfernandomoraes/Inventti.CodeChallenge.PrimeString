@@ -3,7 +3,7 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:55288",
+      "applicationUrl": "http://localhost:51650",
       "sslPort": 0
     }
   },
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "Inventti.CodeChallenge.PrimeString": {
+    "Inventti.CodeChallenge.PrimeString.Api": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "api/values",
@@ -31,7 +31,7 @@
       "launchBrowser": true,
       "launchUrl": "{Scheme}://{ServiceHost}:{ServicePort}/api/values",
       "environmentVariables": {},
-      "httpPort": 55300
+      "httpPort": 51654
     }
   }
 }

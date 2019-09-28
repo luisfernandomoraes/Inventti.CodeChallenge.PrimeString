@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Inventti.CodeChallenge.Prim
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventti.CodeChallenge.PrimeString.Test", "Inventti.CodeChallenge.PrimeString.Test\Inventti.CodeChallenge.PrimeString.Test.csproj", "{E6B53931-DA70-450F-B62D-B85BB57B4026}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Inventti.CodeChallenge.PrimeString.Api", "Inventti.CodeChallenge.PrimeString.Api\Inventti.CodeChallenge.PrimeString.Api.csproj", "{A988F658-54CC-4C48-8CB3-FA71421DE963}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{E6B53931-DA70-450F-B62D-B85BB57B4026}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6B53931-DA70-450F-B62D-B85BB57B4026}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6B53931-DA70-450F-B62D-B85BB57B4026}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A988F658-54CC-4C48-8CB3-FA71421DE963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A988F658-54CC-4C48-8CB3-FA71421DE963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A988F658-54CC-4C48-8CB3-FA71421DE963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A988F658-54CC-4C48-8CB3-FA71421DE963}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
