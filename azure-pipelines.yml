@@ -1,0 +1,67 @@
+# ASP.NET Core
+
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-16.04' 
+  
+
+variables:
+  buildConfiguration: 'Release'
+  OPEN_WEATHER_API_KEY: 'b7403e3ebc65da953abaa5a474259e9f'
+  azureSubscriptionEndpoint: 'MyAzureServiceConnection'
+  dockerHub: 'InventtiCodeChallengeContainerRegistry'
+  imageName: 'inventti-api'
+
+  # do this before all your .NET Core tasks
+steps:
+- task: DotNetCoreInstaller@0
+  inputs:
+    version: '2.2.300' # replace this value with the version that you need for your project
+# ...
+
+
+- script: dotnet build --configuration $(buildConfiguration)
+  displayName: 'dotnet build $(buildConfiguration)'
+# do this after other tasks such as building
+- task: DotNetCoreCLI@2
+  inputs:
+    command: test
+    projects: '**/*Tests/*.csproj'
+    arguments: '--configuration $(buildConfiguration) --collect "Code coverage"'
+  
+- task: Docker@1
+  displayName: 'Docker: login ACR'
+  inputs:
+    command: login
+    azureSubscriptionEndpoint: $(azureSubscriptionEndpoint)
+    azureContainerRegistry: $(dockerHub)
+
+- task: Docker@2
+  displayName: Build an image
+  inputs:
+    repository: $(imageName)
+    containerRegistry: |
+      $(dockerHub)
+    command: build
+    Dockerfile: Dockerfile
+    tags: |
+      latest
+
+- task: Docker@2
+  displayName: Push image
+  inputs:
+    containerRegistry: |
+      $(dockerHub)
+    repository: $(imageName)
+    command: push
+    tags: |
+      latest
+
+- task: AzureCLI@1
+  inputs:
+    azureSubscription: $(azureSubscriptionEndpoint)
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      az container restart --name=inventti-api --resource-group=SoftplanCalcTestInterestRateApi20190907041844ResourceGroup
