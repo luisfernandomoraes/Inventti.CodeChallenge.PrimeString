@@ -25,6 +25,8 @@ namespace Inventti.CodeChallenge.PrimeString.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddSwaggerDocumentation();
+            services.AddScoped<Application.Services.ICheckStringsServices, Application.Services.CheckStringsServices>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -36,6 +38,7 @@ namespace Inventti.CodeChallenge.PrimeString.Api
             }
 
             app.UseMvc();
+            app.UseSwaggerDocumentation();
         }
     }
 }

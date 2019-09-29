@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Inventti.CodeChallenge.PrimeString.Api</name>
+    </assembly>
+    <members>
+        <member name="T:Inventti.CodeChallenge.PrimeString.Api.Controllers.PrimeStringController">
+            <summary>
+            PrimeString API Controller.
+            </summary>
+        </member>
+        <member name="M:Inventti.CodeChallenge.PrimeString.Api.Controllers.PrimeStringController.#ctor(Inventti.CodeChallenge.PrimeString.Application.Services.ICheckStringsServices)">
+            <summary>
+            Creates a instance of PrimeStringController.
+            </summary>
+            <param name="checkStringsServices"></param>
+        </member>
+        <member name="M:Inventti.CodeChallenge.PrimeString.Api.Controllers.PrimeStringController.CheckStringsArePrimes(System.String,System.String)">
+            <summary>
+            Check if strings are primes.
+            </summary>
+            <param name="firstString"></param>
+            <param name="secondString"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Inventti.CodeChallenge.PrimeString.Api.SwaggerExtensions">
+            <summary>
+            Classe responsável por adicionar o middleware do Swagger na aplicação.
+            </summary>
+        </member>
+        <member name="M:Inventti.CodeChallenge.PrimeString.Api.SwaggerExtensions.AddSwaggerDocumentation(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            Registra o serviço do Swagger no container da aplicação.
+            </summary>
+            <param name="services"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Inventti.CodeChallenge.PrimeString.Api.SwaggerExtensions.UseSwaggerDocumentation(Microsoft.AspNetCore.Builder.IApplicationBuilder)">
+            <summary>
+            Habilita a UI do Swagger.
+            </summary>
+            <param name="app"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
