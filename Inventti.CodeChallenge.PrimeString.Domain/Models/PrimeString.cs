@@ -53,10 +53,10 @@ namespace Inventti.CodeChallenge.PrimeString.Domain.Models
         private bool CheckEvenPositions(string firstString, string secondString)
         {
             var evenElementsFromFirstString =
-                _firstString.Select((value, index) => (value, index)).Where(item => item.index % 2 == 0).ToList();
+                firstString.Select((value, index) => (value, index)).Where(item => item.index % 2 == 0).ToList();
 
             var evenElementsFromSecondString =
-                _secondString.Select((value, index) => (value, index)).Where(item => item.index % 2 == 0).ToList();
+                secondString.Select((value, index) => (value, index)).Where(item => item.index % 2 == 0).ToList();
 
 
             var result = evenElementsFromFirstString.TrueForAll(valueTuple => evenElementsFromSecondString.Exists(x => x.value == valueTuple.value));
@@ -73,10 +73,10 @@ namespace Inventti.CodeChallenge.PrimeString.Domain.Models
         private bool CheckOddPositions(string firstString, string secondString)
         {
             var oddElementsFromFirstString =
-                _firstString.Select((value, index) => (value, index)).Where(item => item.index % 2 != 0).ToList();
+                firstString.Select((value, index) => (value, index)).Where(item => item.index % 2 != 0).ToList();
 
             var oddElementsFromSecondString =
-                _secondString.Select((value, index) => (value, index)).Where(item => item.index % 2 != 0).ToList();
+                secondString.Select((value, index) => (value, index)).Where(item => item.index % 2 != 0).ToList();
 
             var result = oddElementsFromFirstString.TrueForAll(valueTuple => oddElementsFromSecondString.Exists(x => x.value == valueTuple.value));
 

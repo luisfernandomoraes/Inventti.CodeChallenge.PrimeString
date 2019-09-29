@@ -38,5 +38,20 @@ namespace Inventti.CodeChallenge.PrimeString.Test.Unit
             // Ass
             exception.Message.Should().Be("firstString : O valor não pode ser nulo ou vazio.\r\n");
         }
+
+        [Theory(DisplayName = "Deve retornar valores válidos")]
+        [InlineData("abcd", "cdab")]
+        [InlineData("sacada", "casada")]
+        public void Should_Be_Return_Valid_Result(string firstString, string secondString)
+        {
+            // Arr
+            CheckStringsServices checkStringsServices = new CheckStringsServices();
+
+            // Act
+            var arePrimes = checkStringsServices.CheckArePrimes(firstString, secondString);
+
+            // Ass
+            arePrimes.Should().BeTrue();
+        }
     }
 }
