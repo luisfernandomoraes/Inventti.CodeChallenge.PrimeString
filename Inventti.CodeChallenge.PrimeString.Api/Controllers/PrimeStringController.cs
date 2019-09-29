@@ -24,6 +24,15 @@ namespace Inventti.CodeChallenge.PrimeString.Api.Controllers
         }
 
         /// <summary>
+        /// Sipa
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("Values")]
+        public IActionResult GetValues()
+        {
+            return Ok("deu boa");
+        }
+        /// <summary>
         /// Check if strings are primes or not.
         /// </summary>
         /// <param name="firstString"></param>
