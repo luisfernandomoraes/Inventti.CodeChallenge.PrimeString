@@ -24,7 +24,7 @@ namespace Inventti.CodeChallenge.PrimeString.Api.Controllers
         }
 
         /// <summary>
-        /// Check if strings are primes.
+        /// Check if strings are primes or not.
         /// </summary>
         /// <param name="firstString"></param>
         /// <param name="secondString"></param>
