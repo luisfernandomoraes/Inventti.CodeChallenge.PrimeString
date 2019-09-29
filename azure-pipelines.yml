@@ -11,7 +11,7 @@ variables:
   buildConfiguration: 'Release'
   OPEN_WEATHER_API_KEY: 'b7403e3ebc65da953abaa5a474259e9f'
   azureSubscriptionEndpoint: 'MyAzureServiceConnection'
-  dockerHub: 'Way2CodeChallengeContainerRegistry'
+  dockerHub: 'InventtiCodeChallengeContainerRegistry'
   imageName: 'inventti-api'
 
   # do this before all your .NET Core tasks
